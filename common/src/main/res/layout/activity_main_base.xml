@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BaseMainActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/main_IMG_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/big_diameter"
+        android:scaleType="fitXY"
+        android:src="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/main_IMG_circle"
+        android:layout_width="@dimen/big_diameter"
+        android:layout_height="@dimen/big_diameter"
+        android:layout_marginTop="148dp"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/main_IMG_header"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/main_IMG_header"
+        app:layout_constraintTop_toTopOf="@+id/main_IMG_header"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:strokeWidth="6dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_TXT_chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:contextClickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/main_IMG_circle"
+        app:layout_constraintEnd_toEndOf="@+id/main_IMG_circle"
+        app:layout_constraintStart_toStartOf="@+id/main_IMG_circle"
+        app:layout_constraintTop_toTopOf="@+id/main_IMG_circle"
+        tools:text="mm:ss:msms"
+        tools:textSize="40sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_IMG_circle">
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/main_BTN_toggle"
+            android:layout_width="@dimen/small_diameter"
+            android:layout_height="@dimen/small_diameter"
+            android:layout_weight="1"
+            android:background="@drawable/start"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:textOff=""
+            android:textOn="" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_BTN_stop"
+            android:layout_width="@dimen/small_diameter"
+            android:layout_height="@dimen/small_diameter"
+            android:layout_weight="1"
+            android:background="@drawable/stop"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="@dimen/elevation"
+            app:backgroundTint="@color/colorPrimary" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
